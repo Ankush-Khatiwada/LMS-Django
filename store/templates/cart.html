@@ -27,6 +27,8 @@
                     <th>Image</th>
                     <th>Book</th>
                     <th>ISBN</th>
+                    <th>Author</th>
+
 
                 </tr>
             </thead>
@@ -35,9 +37,12 @@
                 {% for product in products %}
                 <tr>
                     <td>{{forloop.counter}}</td>
+                  
+                    
                     <td><img style="height: 80px;" class="rounded-circle" src="{{product.image.url}}" alt=""></td>
                     <td>{{product.name}}</td>
-                    <td>{{product.price|currency}}</td>
+                    <td>{{product.Isbn}}</td>
+                    <td>{{product.author}}</td>
                     <td>{{product|cart_quantity:request.session.cart}}</td>
 
                 </tr>
@@ -81,7 +86,7 @@
                 {% csrf_token %}
                 <div class="form-group">
                   <label for="">ID</label>
-                  <input type="number" name="address" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                  <input type="text" name="address" id="" class="form-control" placeholder="" aria-describedby="helpId">
                   
                 </div>
                 <div class="form-group">
